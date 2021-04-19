@@ -1,0 +1,33 @@
+h1 {
+  font-family: sans-serif;
+  margin: 100px auto;
+  color: black;
+  text-align: center;
+  font-size: 30px;
+  max-width: 600px;
+  position: relative;
+}
+
+h1:before {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 1px;
+  background: black;
+  left: 0;
+  top: 50%;
+  position: absolute;
+}
+
+h1:after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 1px;
+  background: black;
+  right: 0;
+  top: 50%;
+  position: absolute;
+  margin: 0 1rem;
+}
+
