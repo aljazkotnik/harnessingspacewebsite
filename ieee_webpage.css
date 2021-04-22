@@ -1,33 +1,105 @@
+h1, h2, h3, h4, p, a, b, li, ol {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
 h1 {
-  font-family: sans-serif;
-  margin: 100px auto;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
   color: black;
   text-align: center;
-  font-size: 30px;
+  font-size: 48px;
   max-width: 600px;
   position: relative;
 }
 
-h1:before {
-  content: "";
-  display: block;
-  width: 200px;
-  height: 1px;
-  background: black;
-  left: 0;
-  top: 50%;
-  position: absolute;
+
+h2 {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  text-align: center;
+  font-size: 28px;
+  max-width: 600px;
+  position: relative;
 }
 
-h1:after {
+h2::before {
   content: "";
   display: block;
-  width: 40%;
-  height: 1px;
+  width: 50%;
+  height: 2px;
+  background: black;
+  left: 0px;
+  top: 50%;
+  position: absolute;
+  z-index:-2;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
   background: black;
   right: 0;
   top: 50%;
   position: absolute;
   margin: 0 1rem;
+  z-index:-2;
 }
 
+span {
+	background: white;
+	margin: 0px 10px 0px 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: inline-block;
+}
+
+h4.author-name {
+  margin-bottom: 2px;
+}
+
+div {
+	max-width: 600px;
+	margin: auto;
+}
+
+a {
+  color: black;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+	text-underline-offset: 0px;
+	text-decoration-thickness: 3px;
+}
+
+article > p {
+  margin: 0px;
+}
+
+article > h4 {
+  margin-bottom: 0px;
+}
+
+
+figure {
+	text-align: center;
+}
+
+
+img {
+	max-width: 30%;
+	display: inline-block; 
+	vertical-align: middle;
+	transition: transform .2s; /* Animation */
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+img:hover {
+	transform: scale(1.1);
+}

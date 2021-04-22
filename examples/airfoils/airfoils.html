@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+	
+	
+	<!-- d3 code -->
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	<script src="http://dbslice.org/d3-tip.js"></script>
+
+	
+	
+	<!-- NEW gl-matrix, twgl -->
+	<script src="/examples/airfoils/src/outside/gl-matrix-min.js"></script>
+	<script src="/examples/airfoils//src/outside/twgl.min.js"></script>
+	
+	
+	<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!-- Custom CSS -->
+	<!-- link rel="stylesheet" href="/src/style/bootstrap.min.css" -->
+	<link rel="stylesheet" href="/examples/airfoils/src/style/canvas.css">
+	
+	
+	
+
+</style>
+	
+	
+</head>
+  
+  
+<body>
+
+  <div id="airfoils">
+    
+	<div>
+		<h1 style="display: inline-block;">Airfoils</h1>
+		<button class="btn btn-dark" id="help-show" style="float: right;">?</button>
+	</div>
+	
+	
+	<div>
+		<button class="btn btn-dark" id="tsne">t-SNE</button>
+		<button class="btn btn-dark" id="kmeans">k-means</button>
+		<button class="btn btn-dark" id="correlation-show">correlations</button>
+	</div>
+	
+	<div id="exploration">
+		<button class="breadcrumb breadcrumb-root">Root: </button>
+	</div>
+	
+	
+  
+	<div style="position: absolute; height: 100%; width: 100%;">
+		<canvas id="plotcanvas"></canvas>
+		<div class="content"></div>
+		<svg id="overlay"></svg>
+		
+		
+		<div id="correlation-container" class="fullscreen-container" style="display: none;">
+			<svg style="width: 100%; height: 100%;"></svg>
+			<button id="correlation-hide" class="btn btn-danger" style="position: absolute; left: 10px;">x</button>
+		</div>
+		
+	
+	</div>
+	
+  </div>
+  
+	
+  	<div id="help-container" style="background: rgba(90, 90, 90, 0.5); position: absolute; top: 0px; left: -10px; width: 102%; height: 500%; overflow: hidden; display: none;">
+			<div style="display: block; overflow: hidden;">
+				<button id="help-hide" class="btn btn-danger" style="float: right;">x</button>
+			</div>
+			
+			<div class="help-card">
+			
+			  <div class="help-item">
+			  <h2>Session controls</h2>
+			  </div>
+			  
+			  <div class="help-item">
+			    <button class="breadcrumb breadcrumb-root">t-sne</button>
+				<span>: reposition small multiples using t-SNE</span>
+			  </div>
+			
+			  <div class="help-item">
+			    <button class="breadcrumb breadcrumb-root">k-means</button>
+				<span>: use the groups visible on-screen to assign all small multiples between them. The original groups are dissolved in the process.</span>
+			  </div>
+			
+			  <div class="help-item">
+			    <button class="breadcrumb breadcrumb-root">correlations</button>
+				<span>: calculate and display correlations between on-screen positions of small multiples and their associated metadata.</span>
+			  </div>
+			
+			  <div class="help-item">
+			    <button class="breadcrumb breadcrumb-root">Root: </button>
+				<span>: taxonomy layer navigator. Layers appear when entering a specific group. Click on a layer to return to it.</span>
+			  </div>
+			
+			
+			  <div class="help-item">
+			  <h2>Lasso controls</h2>
+			  </div>
+			
+			  <div class="help-item">
+			    <span>
+			      <span>Lasso: </span>
+			      <button class="btn-help">shift</button>
+				  <span>+ left mouse-click & drag</span>
+			    </span>
+			  </div>
+			  
+			  <div class="help-card">
+			    <span>Lasso toolbar: </span>
+			    
+				
+				
+				<div class="help-item">
+				  <button class="btn-circle-help">
+				    <i class="fa fa-stack-overflow" style="cursor: pointer;"></i>
+				  </button>
+				  <span>: Group selected small multiples</span>
+				</div>
+				
+				<div class="help-item">
+				  <button class="btn-circle-help">
+				    <i class="fa fa-tags" style="cursor: pointer;"></i>
+				  </button>
+				  <span>: Add metadata to selected small multiples</span>
+				</div>
+				
+				<div class="help-item">
+				  <button class="btn-circle-help">
+				    <i class="fa fa-close" style="cursor: pointer;"></i>
+				  </button>
+				  <span>: Close the toolbar</span>
+				</div>
+				
+			  </div>
+			  
+			  <div class="help-item">
+			  <h2>Group controls</h2>
+			  </div>
+			  
+			  <div class="help-item">
+			    <span>Show group controls: </span>
+			    <button class="btn-help">ctrl</button>
+				<span>+ mouse over-group</span>
+			  </div>
+			  
+			  <div class="help-item">
+			      <span>Dissolve the group: </span>
+				  <button class="btn-circle-help">
+				    <i class="fa fa-close" style="cursor: pointer;"></i>
+				  </button>
+				  
+				</div>
+			
+			
+			</div>
+		</div>
+	
+	
+  </div>
+  
+
+  
+  <script type="module" src="/examples/airfoils/build/bundle.js"></script>
+
+  
+</body>
+</html>
