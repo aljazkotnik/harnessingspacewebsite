@@ -1,0 +1,298 @@
+html, body {
+	height: 100%;
+}
+
+
+h1 {
+	font-family: helvetica;
+	font-size: 60px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#airfoils {
+	height: 100%;
+	width: 100%;
+}
+
+#plotcanvas {
+	width: 100%;
+	height: 100%;
+}
+
+#overlay {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.fullscreen-container {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(90, 90, 90, 0.5);
+}
+
+
+
+.list-item {
+	display: inline-block;
+	padding: 1em;
+	box-shadow: 1px 2px 4px 0px rgba(0,0,0,0.25);
+}
+
+.list-item > div.description-element {
+	color: #888;
+	font-family: helvetica;
+	font-size: 10px;
+	margin-top: 0.5em;
+}
+
+/* GROUP CSS */
+.group-item {
+	display: inline-block;
+	padding: 1em;
+	box-shadow: 1px 2px 4px 0px rgba(0,0,0,0.5);
+}
+
+.group-previews {
+	overflow: auto;
+}
+
+.group-controls {
+	padding: 1em 0em 0em 0em;
+}
+
+.preview-element {
+	width:20px;
+	height:20px;
+	background:gainsboro;
+	float: left;
+	max-width: 90%;
+}
+
+.preview-element:hover {
+	background:gray;
+}
+
+.cover-element {
+	width:20px;
+	height:20px;
+	background:cornflowerblue;
+	float: left;
+	max-width: 90%;
+	text-align: center;
+	font-family: helvetica;
+	cursor: default; 
+}
+
+.btn-circle { 
+	width: 20px; 
+	height: 20px; 
+	border: none;
+	border-radius: 10px;  
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	float: right;
+	background-color: #e7e7e7; // Gray
+	color: black;
+	cursor: pointer;
+}
+
+.btn-circle > i {
+	vertical-align: middle;
+}
+
+
+
+/* GENERAL BUTTONS */
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #e7e7e7;
+}
+
+.btn-small {
+  border: none;
+  border-radius: 6px;
+  padding: 2px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #e7e7e7;
+}
+
+.btn-dark {
+  background-color: black;
+  color: white;
+}
+
+.btn-success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-info {
+  background-color: #008CBA;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #D9534F;
+  color: white;
+}
+
+
+
+
+/* Styling for the help menu */
+
+div.help-card {
+	display: block;
+	max-width: 80%;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	background: white;
+	border-radius: 6px;
+}
+
+div.help-item {
+	max-width: 80%; 
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+
+.btn-help {
+  border: none;
+  border-radius: 6px;
+  padding: 3px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #e7e7e7;
+  color: black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  position: relative;
+  top: -3px;
+}
+
+.btn-circle-help { 
+	width: 20px; 
+	height: 20px; 
+	border: none;
+	border-radius: 10px;  
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	background-color: #e7e7e7; // Gray
+	color: black;
+	cursor: pointer;
+}
+
+.btn-circle-help > i {
+	vertical-align: middle;
+	position: relative;
+	left: -1px;
+}
+
+span {
+	font-family: helvetica;
+}
+
+h2 {
+	font-family: helvetica;
+}
+
+
+
+/* Styling for the tagging */
+.tagging {
+	background-color: white;
+	color: #fff;
+	text-align: center;
+	border-radius: 14px;
+	border: 2px solid black;
+	padding: 5px 5px 5px 5px;
+	position: absolute;
+	left: 85.25px; 
+	top: 100px;
+}
+
+
+.label {
+	text-decoration: none;
+	font: Helvetica;
+	display: inline-block;
+	width: 100px;
+}
+
+.label-button {
+	border: none;
+	border-radius: 6px;
+	padding: 2px 4px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	margin: 4px 2px;
+	cursor: pointer;
+	background-color: black;
+	color: white;
+}
+
+/* Styling for the contour plot tooltip */
+.contourTooltip {
+	background-color: white;
+	color: black;
+	text-align: center;
+	border-radius: 14px;
+	border: 2px solid black;
+	padding: 5px 5px 5px 5px;
+	position: absolute;
+	left: 85.25px; 
+	top: 100px;
+}
+
+.contourTooltip::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+
+
+/* Breadcrumb styling */
+button.breadcrumb {
+	font-family: helvetica;
+	background-color: black;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
